@@ -9,3 +9,7 @@
 gradlew
 gradlew.bat
 Performance-Measure.iml
+benchmark-annotations/benchmark-annotations.iml
+benchmark-example/benchmark-example.iml
+benchmark-plugin/benchmark-plugin.iml
+benchmark-runtime/benchmark-runtime.iml
