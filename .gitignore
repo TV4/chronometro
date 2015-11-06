@@ -5,3 +5,7 @@
 .DS_Store
 /build
 /captures
+.idea
+gradlew
+gradlew.bat
+Performance-Measure.iml

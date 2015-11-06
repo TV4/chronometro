@@ -1,0 +1,3 @@
+include ':benchmark-example', ':benchmark-annotations'
+include ':benchmark-plugin'
+include ':benchmark-runtime'
