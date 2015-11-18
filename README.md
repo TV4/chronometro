@@ -1,6 +1,6 @@
-# benchmark
+# Chronometro
 
-!!! not uploaded to repository yet!!!
+!!! not public yet!!!
 
 The benchmark plugin enables developers to use the benchmark library in order to track the loading times for their different classes in their apps.
 
