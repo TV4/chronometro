@@ -2,7 +2,7 @@
 
 !!! not public yet!!!
 
-The *chronometro* plugin enables developers to use the benchmark library in order to track the loading times for their different classes in their apps.
+The *chronometro* plugin enables developers to use the *chronometro* library in order to track the loading times for their different classes in their apps.
 
 It's really hard to benchmark loading times when developing especially if you want to track fragment's or activity's creation before and after your network calls have been finished (successfully or not).
 
