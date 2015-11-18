@@ -1,3 +1,3 @@
-include ':benchmark-example', ':benchmark-annotations'
-include ':benchmark-plugin'
-include ':benchmark-runtime'
+include ':chronometro-example', ':chronometro-annotations'
+include ':chronometro-plugin'
+include ':chronometro-runtime'
