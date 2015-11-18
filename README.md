@@ -8,7 +8,7 @@ It's really hard to benchmark loading times when developing especially if you wa
 
 This library provides an annotation used to mark the methods you want to start and stop your tracking. You can also mark some methods as checkpoints so the timer doesn't stop, but just reports the loading time so far. 
 
-Tha plugin is inspired and heavily based on [Jake Wharton's Hugo Lib](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
+Tha plugin is inspired and heavily based on [Jake Wharton's Hugo plugin](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
 ```java
 @LogUILoadingTime(state = LogUILoadingTime.START, name = "Fragment1")
 @Override
