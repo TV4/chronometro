@@ -57,8 +57,10 @@ private void fetchData() {
 ```
     
 After that you will get some debugging logs like:
-  Performance Measure Loading Times --> Fragment1 checkpoint after method onViewCreated --> [68ms]
-  Performance Measure Loading Times --> Fragment1 checkpoint before method fetchData --> [108ms]
+```
+Performance Measure Loading Times --> Fragment1 checkpoint after method onViewCreated --> [68ms]
+Performance Measure Loading Times --> Fragment1 checkpoint before method fetchData --> [108ms]
+```
   
   
 You can add it in your project by:
