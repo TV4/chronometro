@@ -33,8 +33,8 @@ public void onDataSuccess(Data data) {
     
 After that you will get some debugging logs like
 ```
-Performance Measure Loading Times --> Fragment1 started
-Performance Measure Loading Times --> Fragment1 created --> [2000ms]
+Chronometro ----> Fragment1 started
+Chronometro ----> Fragment1 created --> [2000ms]
 ```
 
 You can have different timers by providing a different name value in the annotation. Here two states are available on for get the loading time right before the method runs (LogUILoadingTime.CHECKPOINT_START) and one right after (LogUILoadingTime.CHECKPOINT_END)
@@ -58,8 +58,8 @@ private void fetchData() {
     
 After that you will get some debugging logs like:
 ```
-Performance Measure Loading Times --> Fragment1 checkpoint after method onViewCreated --> [68ms]
-Performance Measure Loading Times --> Fragment1 checkpoint before method fetchData --> [108ms]
+Chronometro ----> Fragment1 checkpoint after method onViewCreated --> [68ms]
+Chronometro ----> Fragment1 checkpoint before method fetchData --> [108ms]
 ```
   
   
