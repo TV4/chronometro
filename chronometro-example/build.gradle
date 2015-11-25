@@ -34,7 +34,7 @@ android {
     }
 
     buildTypes {
-        debug {
+        dev {
             applicationIdSuffix '.dev'
             debuggable true
         }
