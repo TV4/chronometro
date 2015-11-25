@@ -124,9 +124,9 @@ public class LogUILoadingTimesAspect {
      */
     private static String buildLogMessage(String methodName, long loadingTimeDuration) {
         StringBuilder message = new StringBuilder();
-        message.append("Performance Measure Loading Times --> ");
+        message.append("Chronometro ----> ");
         message.append(methodName);
-        message.append(" --> ");
+        message.append(" in ");
         message.append("[");
         message.append(loadingTimeDuration);
         message.append("ms");
@@ -143,7 +143,7 @@ public class LogUILoadingTimesAspect {
      */
     private static String buildStartLogMessage(String methodName) {
         StringBuilder message = new StringBuilder();
-        message.append("Performance Measure Loading Times --> ");
+        message.append("Chronometro ----> ");
         message.append(methodName);
 
 
