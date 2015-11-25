@@ -24,7 +24,7 @@ import se.tv4.chronometro.internal.StopWatch;
 public class LogUILoadingTimesAspect {
 
     private static final String POINTCUT_METHOD =
-            "execution(@LogUILoadingTime * *(..))";
+            "execution(@se.tv4.chronometro.annotation.LogUILoadingTime * *(..))";
 
     private Map watchMap = new HashMap();
 

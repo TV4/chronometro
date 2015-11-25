@@ -13,3 +13,6 @@ benchmark-annotations/benchmark-annotations.iml
 benchmark-example/benchmark-example.iml
 benchmark-plugin/benchmark-plugin.iml
 benchmark-runtime/benchmark-runtime.iml
+chronometro-annotations/chronometro-annotations.iml
+chronometro-plugin/chronometro-plugin.iml
+chronometro-runtime/chronometro-runtime.iml
