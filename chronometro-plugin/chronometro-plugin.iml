@@ -219,5 +219,8 @@
     <orderEntry type="library" exported="" name="jackson-databind-2.3.2" level="project" />
     <orderEntry type="library" exported="" name="joda-time-2.8.2" level="project" />
     <orderEntry type="library" exported="" name="gradle-tooling-api-builders-2.7" level="project" />
+    <orderEntry type="library" exported="" name="chronometro-plugin.chronometro-plugin-1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="chronometro-plugin.chronometro-plugin-1.0.0-SNAPSHOT-sources" level="project" />
+    <orderEntry type="library" exported="" name="chronometro-plugin.chronometro-plugin-1.0.0-SNAPSHOT-javadoc" level="project" />
   </component>
 </module>

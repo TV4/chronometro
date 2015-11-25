@@ -28,5 +28,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="chronometro-annotations.chronometro-annotations-1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="chronometro-annotations.chronometro-annotations-1.0.0-SNAPSHOT-sources" level="project" />
+    <orderEntry type="library" exported="" name="chronometro-annotations.chronometro-annotations-1.0.0-SNAPSHOT-javadoc" level="project" />
   </component>
 </module>

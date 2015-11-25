@@ -1,4 +1,4 @@
-package se.tv4.benchmark;
+package se.tv4.chronometro;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

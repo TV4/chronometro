@@ -1,4 +1,4 @@
-package se.tv4.benchmark.plugin;
+package se.tv4.chronometro.plugin;
 
 /**
  * Created by dimitris.lachanas on 04/11/15.
@@ -14,7 +14,7 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.tasks.compile.JavaCompile;
 
-class benchmarkPlugin implements Plugin<Project>
+class chronometroPlugin implements Plugin<Project>
 
 {
     @Override
@@ -34,7 +34,7 @@ class benchmarkPlugin implements Plugin<Project>
         }
 
         project.dependencies {
-            debugCompile 'se.tv4:benchmark-runtime:1.0.0-SNAPSHOT'
+            debugCompile 'se.tv4:chronometro-runtime:1.0.0-SNAPSHOT'
             // TODO this should come transitively
             debugCompile 'org.aspectj:aspectjrt:1.8.6'
         }

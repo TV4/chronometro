@@ -15,7 +15,7 @@ dependencies {
 
 modifyPom {
     project {
-        name "Benchmark Plugin"
+        name "Chronometro Plugin"
         description POM_DESCRIPTION
         url POM_URL
 

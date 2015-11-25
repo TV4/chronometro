@@ -1,4 +1,4 @@
-package se.tv4.benchmark.internal;
+package se.tv4.chronometro.internal;
 
 /**
  * Created by dimitris.lachanas on 26/10/15.

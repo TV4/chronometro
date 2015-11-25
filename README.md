@@ -4,11 +4,17 @@
 
 The *chronometro* plugin enables developers to use the *chronometro* library in order to track the loading times for their different classes in their apps.
 
-It's really hard to benchmark loading times when developing especially if you want to track fragment's or activity's creation before and after your network calls have been finished (successfully or not).
+Many times while developing we need to time the loading times of our app so we detect possible issues and optimise the app. In android 
+it's really hard to do that, especially if you want to track the whole flow of a feature, which most probably goes like that:
+Fragment creation -> some networking -> some business logic -> fragment views update
 
-This library provides an annotation used to mark the methods you want to start and stop your tracking. You can also mark some methods as checkpoints so the timer doesn't stop, but just reports the loading time so far. 
+This library provides an annotation used to mark the methods you want in order to start and stop your tracking. You can also mark some 
+methods as timer checkpoints so the timer doesn't stop, but just reports the loading time until before this method runs or after 
+it finishes. 
 
-Tha plugin is inspired and heavily based on [Jake Wharton's Hugo plugin](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
+Tha plugin is based on Aspect Oriented Programming for android and uses the aspectj library. It is inspired and heavily based on [Jake 
+Wharton's Hugo plugin](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented 
+Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
 ```java
 @LogUILoadingTime(state = LogUILoadingTime.START, name = "Fragment1")
 @Override
@@ -63,10 +69,10 @@ buildscript {
   }
 
 dependencies {
-  classpath 'se.tv4:benchmark-plugin:1.0.0'
+  classpath 'se.tv4:chronometro-plugin:1.0.0'
   }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'se.tv4.benchmark'
+apply plugin: 'se.tv4.chronometro'
 ```

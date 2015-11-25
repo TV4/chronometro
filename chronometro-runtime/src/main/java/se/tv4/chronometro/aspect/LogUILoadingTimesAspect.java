@@ -1,4 +1,4 @@
-package se.tv4.benchmark.aspect;
+package se.tv4.chronometro.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -10,9 +10,9 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import se.tv4.benchmark.annotation.LogUILoadingTime;
-import se.tv4.benchmark.internal.DebugLog;
-import se.tv4.benchmark.internal.StopWatch;
+import se.tv4.chronometro.annotation.LogUILoadingTime;
+import se.tv4.chronometro.internal.DebugLog;
+import se.tv4.chronometro.internal.StopWatch;
 
 /**
  * This aspect handles the logging of UI loading times, in the methods the developer uses the {@link LogUILoadingTime} annotation
@@ -24,7 +24,7 @@ import se.tv4.benchmark.internal.StopWatch;
 public class LogUILoadingTimesAspect {
 
     private static final String POINTCUT_METHOD =
-            "execution(@se.tv4.benchmark.annotation.LogUILoadingTime * *(..))";
+            "execution(@LogUILoadingTime * *(..))";
 
     private Map watchMap = new HashMap();
 

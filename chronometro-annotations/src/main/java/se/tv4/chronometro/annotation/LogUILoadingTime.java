@@ -1,4 +1,4 @@
-package se.tv4.benchmark.annotation;
+package se.tv4.chronometro.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
