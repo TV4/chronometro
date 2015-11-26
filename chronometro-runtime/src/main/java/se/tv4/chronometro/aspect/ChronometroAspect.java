@@ -10,29 +10,29 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import se.tv4.chronometro.annotation.LogUILoadingTime;
+import se.tv4.chronometro.annotation.Chronometro;
 import se.tv4.chronometro.internal.DebugLog;
 import se.tv4.chronometro.internal.StopWatch;
 
 /**
- * This aspect handles the logging of UI loading times, in the methods the developer uses the {@link LogUILoadingTime} annotation
+ * This aspect handles the logging of UI loading times, in the methods the developer uses the {@link Chronometro} annotation
  *
  * Created by dimitris.lachanas on 26/10/15.
  */
 
 @Aspect
-public class LogUILoadingTimesAspect {
+public class ChronometroAspect {
 
     private static final String POINTCUT_METHOD =
-            "execution(@se.tv4.chronometro.annotation.LogUILoadingTime * *(..))";
+            "execution(@se.tv4.chronometro.annotation.Chronometro * *(..))";
 
     private Map watchMap = new HashMap();
 
     /**
-     * That is the pointcut for all the methods that are annotated with {@link LogUILoadingTime}
+     * That is the pointcut for all the methods that are annotated with {@link Chronometro}
      */
     @Pointcut(POINTCUT_METHOD)
-    public void methodAnnotatedWithLogUILoadingTime() {
+    public void methodAnnotatedWithChronometro() {
     }
 
 
@@ -40,7 +40,7 @@ public class LogUILoadingTimesAspect {
      * This is the method that is called right before the annotated method is getting called. The code before {@link
      * ProceedingJoinPoint#proceed()} will run before the execution of the method and the code after that will run after the execution.
      * In the particular method we decide when to log the current time or the difference with the starting time, based on the {@link
-     * LogUILoadingTime#state()} the developer provided in the annotation
+     * Chronometro#state()} the developer provided in the annotation
      *
      * @param joinPoint is the joinPoint that represents the actual method call. Don't forget to call {@link ProceedingJoinPoint#proceed
      * ()} in order for the method to run.
@@ -48,7 +48,7 @@ public class LogUILoadingTimesAspect {
      * @return
      * @throws Throwable
      */
-    @Around("methodAnnotatedWithLogUILoadingTime()")
+    @Around("methodAnnotatedWithChronometro()")
     public Object aroundMethod(ProceedingJoinPoint joinPoint) throws Throwable {
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
@@ -56,25 +56,25 @@ public class LogUILoadingTimesAspect {
 
         Method method = methodSignature.getMethod();
 
-        LogUILoadingTime logUILoadingTimeAnnotation = method.getAnnotation(LogUILoadingTime.class);
+        Chronometro chronometroAnnotation = method.getAnnotation(Chronometro.class);
         Object result;
 
-        if (logUILoadingTimeAnnotation != null) {
+        if (chronometroAnnotation != null) {
 
-            switch (logUILoadingTimeAnnotation.state()) {
+            switch (chronometroAnnotation.state()) {
                 // here we start the time watcher and log the starting time
-                case LogUILoadingTime.START:
+                case Chronometro.START:
                     StopWatch stopWatch = new StopWatch();
-                    watchMap.put(logUILoadingTimeAnnotation.name(), stopWatch);
+                    watchMap.put(chronometroAnnotation.name(), stopWatch);
                     stopWatch.start();
-                    DebugLog.log(className, buildStartLogMessage(logUILoadingTimeAnnotation.name() + " started"));
+                    DebugLog.log(className, buildStartLogMessage(chronometroAnnotation.name() + " started"));
                     result = joinPoint.proceed();
                     break;
                 // here we get the current time before the method execution and log it as a checkpoint
-                case LogUILoadingTime.CHECKPOINT_START:
-                    stopWatch = (StopWatch) watchMap.get(logUILoadingTimeAnnotation.name());
+                case Chronometro.CHECKPOINT_START:
+                    stopWatch = (StopWatch) watchMap.get(chronometroAnnotation.name());
                     if(stopWatch != null) {
-                        DebugLog.log(className, buildLogMessage(logUILoadingTimeAnnotation.name() + " checkpoint before method " +
+                        DebugLog.log(className, buildLogMessage(chronometroAnnotation.name() + " checkpoint before method " +
                                         method.getName() ,
                                 stopWatch
                                 .getCurrentTimeMillisDifference()));
@@ -82,22 +82,22 @@ public class LogUILoadingTimesAspect {
                     result = joinPoint.proceed();
                     break;
                 // here we get the current time after the method execution and log it as a checkpoint
-                case LogUILoadingTime.CHECKPOINT_END:
+                case Chronometro.CHECKPOINT_END:
                     result = joinPoint.proceed();
-                    stopWatch = (StopWatch) watchMap.get(logUILoadingTimeAnnotation.name());
+                    stopWatch = (StopWatch) watchMap.get(chronometroAnnotation.name());
                     if(stopWatch != null) {
-                        DebugLog.log(className, buildLogMessage(logUILoadingTimeAnnotation.name() + " checkpoint after method " + method.getName(),
+                        DebugLog.log(className, buildLogMessage(chronometroAnnotation.name() + " checkpoint after method " + method.getName(),
                                 stopWatch
                                 .getCurrentTimeMillisDifference()));
                     }
                     break;
                 // here we stop the time watcher and log the difference in millis from when the time watcher started counting
-                case LogUILoadingTime.END:
+                case Chronometro.END:
                     result = joinPoint.proceed();
-                    stopWatch = (StopWatch) watchMap.get(logUILoadingTimeAnnotation.name());
+                    stopWatch = (StopWatch) watchMap.get(chronometroAnnotation.name());
                     if(stopWatch != null) {
                         stopWatch.stop();
-                        DebugLog.log(className, buildLogMessage(logUILoadingTimeAnnotation.name() + " created", stopWatch.getTotalTimeMillis()));
+                        DebugLog.log(className, buildLogMessage(chronometroAnnotation.name() + " created", stopWatch.getTotalTimeMillis()));
                     }
                     break;
                 // otherwise just proceed

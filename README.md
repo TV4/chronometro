@@ -16,14 +16,14 @@ Tha plugin is based on Aspect Oriented Programming for android and uses the aspe
 Wharton's Hugo plugin](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented 
 Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
 ```java
-@LogUILoadingTime(state = LogUILoadingTime.START, name = "Fragment1")
+@Chronometro(state = Chronometro.START, name = "Fragment1")
 @Override
 public void onAttach(Activity activity) {
   super.onAttach(activity);
   // some code here
 }
     
-@LogUILoadingTime(state = LogUILoadingTime.END, name = "Fragment1")
+@Chronometro(state = Chronometro.END, name = "Fragment1")
 @Override
 public void onDataSuccess(Data data) {
   // some code here
@@ -37,11 +37,11 @@ Chronometro ----> Fragment1 started
 Chronometro ----> Fragment1 created --> [2000ms]
 ```
 
-You can have different timers by providing a different name value in the annotation. Here two states are available on for get the loading time right before the method runs (LogUILoadingTime.CHECKPOINT_START) and one right after (LogUILoadingTime.CHECKPOINT_END)
+You can have different timers by providing a different name value in the annotation. Here two states are available on for get the loading time right before the method runs (Chronometro.CHECKPOINT_START) and one right after (Chronometro.CHECKPOINT_END)
 
 ```java    
 // logging the time until after the view has been created
-@LogUILoadingTime(state = LogUILoadingTime.CHECKPOINT_END, name = "Fragment1")
+@Chronometro(state = Chronometro.CHECKPOINT_END, name = "Fragment1")
 @Override
 public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
   super.onViewCreated(view, savedInstanceState);
@@ -49,7 +49,7 @@ public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 }
     
 // logging the time until before the fetching of data
-@LogUILoadingTime(state = LogUILoadingTime.CHECKPOINT_START, name = "Fragment1")
+@Chronometro(state = Chronometro.CHECKPOINT_START, name = "Fragment1")
 @Override
 private void fetchData() {
   // some code here

@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
-public @interface LogUILoadingTime {
+public @interface Chronometro {
 
     int START = 0;
     int CHECKPOINT_START = 1;

@@ -9,28 +9,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import se.tv4.chronometro.annotation.LogUILoadingTime;
+import se.tv4.chronometro.annotation.Chronometro;
+import se.tv4.chronometro.example.R;
 
 @TargetApi(Build.VERSION_CODES.CUPCAKE)
 public class MainActivity extends Activity {
 
     private TextView mainTextview;
 
-    @LogUILoadingTime(state = LogUILoadingTime.START, name = "MainActivity")
+    @Chronometro(state = Chronometro.START, name = "MainActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainTextview = (TextView) findViewById(R.id.main_textview);
         mainTextview.setText("Start");
-        startDoing();
-    }
-
-    private void startDoing() {
         startDo1();
     }
 
-    @LogUILoadingTime(state = LogUILoadingTime.END, name = "MainActivity")
+    @Chronometro(state = Chronometro.END, name = "MainActivity")
     private void endDo() {
         new AsyncTask<Object, Object, Void>() {
             @Override
@@ -52,7 +49,7 @@ public class MainActivity extends Activity {
 
     }
 
-    @LogUILoadingTime(state = LogUILoadingTime.CHECKPOINT_END, name = "MainActivity")
+    @Chronometro(state = Chronometro.CHECKPOINT_END, name = "MainActivity")
     private void startDo2() {
         new AsyncTask<Object, Object, Void>() {
             @Override
@@ -75,7 +72,7 @@ public class MainActivity extends Activity {
     }
 
 
-    @LogUILoadingTime(state = LogUILoadingTime.CHECKPOINT_START, name = "MainActivity")
+    @Chronometro(state = Chronometro.CHECKPOINT_START, name = "MainActivity")
     private void startDo1() {
         new AsyncTask<Object, Object, Void>() {
             @Override
