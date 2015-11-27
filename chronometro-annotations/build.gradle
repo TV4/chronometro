@@ -35,6 +35,20 @@ bintray {
     }
 }
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters

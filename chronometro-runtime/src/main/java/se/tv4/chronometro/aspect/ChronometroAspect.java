@@ -15,7 +15,7 @@ import se.tv4.chronometro.internal.DebugLog;
 import se.tv4.chronometro.internal.StopWatch;
 
 /**
- * This aspect handles the logging of UI loading times, in the methods the developer uses the {@link Chronometro} annotation
+ * This aspect handles the logging of UI loading times, in the methods the developer uses the @Chronometro annotation
  *
  * Created by dimitris.lachanas on 26/10/15.
  */
@@ -29,7 +29,7 @@ public class ChronometroAspect {
     private Map watchMap = new HashMap();
 
     /**
-     * That is the pointcut for all the methods that are annotated with {@link Chronometro}
+     * That is the pointcut for all the methods that are annotated with @Chronometro
      */
     @Pointcut(POINTCUT_METHOD)
     public void methodAnnotatedWithChronometro() {
@@ -37,13 +37,13 @@ public class ChronometroAspect {
 
 
     /**
-     * This is the method that is called right before the annotated method is getting called. The code before {@link
-     * ProceedingJoinPoint#proceed()} will run before the execution of the method and the code after that will run after the execution.
-     * In the particular method we decide when to log the current time or the difference with the starting time, based on the {@link
-     * Chronometro#state()} the developer provided in the annotation
+     * This is the method that is called right before the annotated method is getting called. The code before proceed() will run before
+     * the execution of the method and the code after that will run after the execution.
+     * In the particular method we decide when to log the current time or the difference with the starting time, based on the
+     * Chronometro.state() the developer provided in the annotation
      *
-     * @param joinPoint is the joinPoint that represents the actual method call. Don't forget to call {@link ProceedingJoinPoint#proceed
-     * ()} in order for the method to run.
+     * @param joinPoint is the joinPoint that represents the actual method call. Don't forget to call proceed() in order for the method
+     * to run.
      *
      * @return
      * @throws Throwable
