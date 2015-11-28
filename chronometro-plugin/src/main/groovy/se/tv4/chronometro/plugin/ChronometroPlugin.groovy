@@ -34,7 +34,7 @@ class chronometroPlugin implements Plugin<Project>
         }
 
         project.dependencies {
-            debugCompile 'se.tv4:chronometro-runtime:0.3.0'
+            debugCompile 'se.tv4:chronometro-runtime:0.4.0'
             // TODO this should come transitively
             debugCompile 'org.aspectj:aspectjrt:1.8.6'
         }

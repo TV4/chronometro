@@ -1,5 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: 'com.jfrog.bintray'
+apply from: "$rootProject.projectDir/bintray.gradle"
 
 
 targetCompatibility = JavaVersion.VERSION_1_7
@@ -27,35 +27,7 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-
-    configurations = ['archives']
-    pkg {
-        repo = 'maven'
-        name = 'Chronometro'
-
-        userOrg = user
-        desc = POM_DESCRIPTION
-        websiteUrl = POM_SCM_URL
-        vcsUrl = POM_SCM_CONNECTION
-        licenses = ["Apache-2.0"]
-        publish = true
-        publicDownloadNumbers = true
-        version {
-            desc = POM_DESCRIPTION
-            gpg {
-                sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = properties.getProperty("bintray.gpg.password")
-                //Optional. The passphrase for GPG signing'
-            }
-        }
-    }
-}
 
 install {
     repositories.mavenInstaller {

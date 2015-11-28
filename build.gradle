@@ -1,10 +1,8 @@
+
 buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        maven {
-            url 'https://dl.bintray.com/wwwadm-tv4/maven/'
-        }
     }
 
     dependencies {
@@ -17,9 +15,7 @@ buildscript {
 allprojects {
     repositories {
         mavenCentral()
-        maven {
-            url 'https://dl.bintray.com/wwwadm-tv4/maven/'
-        }
+        jcenter()
     }
 
     group = GROUP
@@ -31,4 +27,3 @@ ext {
     compileSdkVersion = 21
     buildToolsVersion = "23.0.1"
 }
-

@@ -2,10 +2,7 @@ buildscript {
     dependencies {
         repositories {
             mavenCentral()
-
-            maven {
-                url 'https://dl.bintray.com/wwwadm-tv4/maven/'
-            }
+            jcenter()
         }
 
         classpath 'com.android.tools.build:gradle:1.5.0'
@@ -20,7 +17,7 @@ apply plugin: 'chronometro'
 dependencies {
     repositories {
         mavenCentral()
-
+        jcenter()
     }
 }
 
