@@ -13,8 +13,9 @@ methods as timer checkpoints so the timer doesn't stop, but just reports the loa
 it finishes. 
 
 Tha plugin is based on Aspect Oriented Programming for android and uses the aspectj library. It is inspired and heavily based on [Jake 
-Wharton's Hugo plugin](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented 
-Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
+Wharton's Hugo plugin](https://github.com/JakeWharton/hugo), as well as on [Fernando Cejas example on Android Aspect Oriented Programming](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/).
+Also [Sittiphol Phanvilai's article around bintray and packaging was more than helpful!](http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en)
+
 ```java
 @Chronometro(state = Chronometro.START, name = "Fragment1")
 @Override
