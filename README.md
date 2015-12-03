@@ -1,6 +1,5 @@
 # Chronometro
-
-!!! not public yet!!!
+<img src="https://github.com/dilah/chronometro/blob/master/stopwatch-34108_640.png" width="100">
 
 The *chronometro* plugin enables developers to use the *chronometro* library in order to track the loading times for their different classes in their apps.
 
@@ -72,7 +71,7 @@ buildscript {
   }
 
 dependencies {
-  classpath 'se.tv4:chronometro-plugin:1.0.0'
+  classpath 'se.tv4:chronometro-plugin:0.4.0'
   }
 }
 
