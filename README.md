@@ -9,6 +9,7 @@ Benchmarking is not a trivial task on Android when taking into account the life 
 The plugin provides the annotation that is used to mark the methods that are going to be tracked. At the same time the checkpoints are provided if one would like to have a report on loading time in a current point of execution without stopping the timer.
 
 *Chronometro*  is based on Aspect Oriented Programming for Android and uses the [AspectJ library](https://eclipse.org/aspectj/).
+
 *Chronometro*  finds its inspiration in:
 * Jake Wharton's plugin [Hugo](https://github.com/JakeWharton/hugo);
 * Fernando Cejas guide on [AAOP](http://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/);
@@ -82,7 +83,7 @@ apply plugin: 'se.tv4.benchmark'
 
 # License
 ```java
-Copyright 2015 TV4 AB.
+Copyright 2015, TV4 AB.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
