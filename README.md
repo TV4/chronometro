@@ -4,7 +4,7 @@
 The *Chronometro* plugin is a benchmarking plugin for Android Studio. 
 
 It provides the information on loading times of any kind of functionality that may be found in the Android application.
-Benchmarking is not a trivial task on Android when taking into account the life cycle of activities and fragments. Thus this plugin appears to be very handy when one needs to track the completion of the network calls in relation to that.
+Benchmarking is not a trivial task on Android when taking into account the life cycle of activities and fragments. Thus, this plugin appears to be very handy when one needs to track the completion of the network calls in relation to that.
 
 The plugin provides the annotation that is used to mark the methods that are going to be tracked. At the same time the checkpoints are provided if one would like to have a report on loading time in a current point of execution without stopping the timer.
 
