@@ -32,7 +32,7 @@ public void onDataSuccess(Data data) {
 ```
     
 Example of result logs:
-```
+```java
 Performance Measure Loading Times --> Fragment1 started
 Performance Measure Loading Times --> Fragment1 created --> [2000ms]
 ```
@@ -61,9 +61,10 @@ private void fetchData() {
 ```
     
 Example of logs at the checkpoints:
+```java
   Performance Measure Loading Times --> Fragment1 checkpoint after method onViewCreated --> [68ms]
   Performance Measure Loading Times --> Fragment1 checkpoint before method fetchData --> [108ms]
-  
+```
   
 To integrate the plugin into your project, please add the following code to your Gradle file:
 ```groovy
