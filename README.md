@@ -82,8 +82,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'se.tv4.benchmark'
 ```
 
-# License
-```java
+License
+====
 Copyright 2015, TV4 AB.
 
 Licensed under the Apache License, Version 2.0 (the "License");
