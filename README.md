@@ -43,7 +43,7 @@ Chronometro --> Fragment1 created --> [2000ms]
 
 One may define several timers y providing a different *name* value in the annotation.
 
-The plugin provides also checkpoints so the developer can get the loading times for methods that run between her starting and ending point.
+The plugin provides also checkpoints so the developer can get the loading times for methods that run between the starting and ending point.
 Here are the two *states* that are available for getting the loading time right before the method runs 
 (Chronometro.CHECKPOINT_START) 
 and one right after 
