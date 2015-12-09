@@ -16,15 +16,19 @@ The plugin provides the annotation that is used to mark the methods that are goi
 * [Bintray and packaging](http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en) by Sittiphol Phanvilai 
 
 
+Usage
+====
+Chronometro commands are written as the annotations to the methods in interest.
+
 ```java
-@LogUILoadingTime(state = LogUILoadingTime.START, name = "Fragment1")
+@Chronometro(state = Chronometro.START, name = "Fragment1")
 @Override
 public void onAttach(Activity activity) {
   super.onAttach(activity);
   // some code here
 }
     
-@LogUILoadingTime(state = LogUILoadingTime.END, name = "Fragment1")
+@Chronometro(state = Chronometro.END, name = "Fragment1")
 @Override
 public void onDataSuccess(Data data) {
   // some code here
@@ -33,8 +37,8 @@ public void onDataSuccess(Data data) {
     
 Example of result logs:
 ```java
-Performance Measure Loading Times --> Fragment1 started
-Performance Measure Loading Times --> Fragment1 created --> [2000ms]
+Chronometro --> Fragment1 started
+Chronometro --> Fragment1 created --> [2000ms]
 ```
 
 One may define several timers y providing a different name value in the annotation.
@@ -45,7 +49,7 @@ and one right after
 
 ```java    
 // logging the time until after the view has been created
-@LogUILoadingTime(state = LogUILoadingTime.CHECKPOINT_END, name = "Fragment1")
+@Chronometro(state = Chronometro.CHECKPOINT_END, name = "Fragment1")
 @Override
 public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
   super.onViewCreated(view, savedInstanceState);
@@ -53,7 +57,7 @@ public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 }
     
 // logging the time until before the fetching of data
-@LogUILoadingTime(state = LogUILoadingTime.CHECKPOINT_START, name = "Fragment1")
+@Chronometro(state = Chronometro.CHECKPOINT_START, name = "Fragment1")
 @Override
 private void fetchData() {
   // some code here
@@ -62,8 +66,8 @@ private void fetchData() {
     
 Example of logs at the checkpoints:
 ```java
-  Performance Measure Loading Times --> Fragment1 checkpoint after method onViewCreated --> [68ms]
-  Performance Measure Loading Times --> Fragment1 checkpoint before method fetchData --> [108ms]
+  Chronometro --> Fragment1 checkpoint after method onViewCreated --> [68ms]
+  Chronometro --> Fragment1 checkpoint before method fetchData --> [108ms]
 ```
   
 To integrate the plugin into your project, please add the following code to your Gradle file:
