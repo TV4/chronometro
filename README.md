@@ -83,7 +83,7 @@ dependencies {
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'se.tv4.benchmark'
+apply plugin: 'chronometro'
 ```
 
 License
