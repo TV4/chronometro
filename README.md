@@ -18,7 +18,7 @@ The plugin provides the annotation that is used to mark the methods that are goi
 
 Usage
 ====
-Chronometro commands are written as the annotations to the methods in interest.
+Chronometro annotations are added to the methods in interest.
 
 ```java
 @Chronometro(state = Chronometro.START, name = "Fragment1")
@@ -41,11 +41,13 @@ Chronometro --> Fragment1 started
 Chronometro --> Fragment1 created --> [2000ms]
 ```
 
-One may define several timers y providing a different name value in the annotation.
-Here are the two states that are available for getting the loading time right before the method runs 
-(LogUILoadingTime.CHECKPOINT_START) 
+One may define several timers y providing a different *name* value in the annotation.
+
+The plugin provides also checkpoints so the developer can get the loading times for methods that run between the starting and ending point.
+Here are the two *states* that are available for getting the loading time right before the method runs 
+(Chronometro.CHECKPOINT_START) 
 and one right after 
-(LogUILoadingTime.CHECKPOINT_END)
+(Chronometro.CHECKPOINT_END)
 
 ```java    
 // logging the time until after the view has been created
