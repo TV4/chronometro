@@ -88,6 +88,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'chronometro'
 ```
 
+OBS! If you are using android-data-binding in your project, make sure you have at least rc3 version.
+```java
+classpath 'com.android.databinding:dataBinder:1.0-rc3'
+```
+
 License
 ====
     Copyright 2015, TV4 AB.
