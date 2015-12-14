@@ -76,7 +76,7 @@ To integrate the plugin into your project, please add the following code to your
 ```groovy
 buildscript {
   repositories {
-    mavenCentral()
+    jcenter()
   }
 
 dependencies {
