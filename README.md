@@ -1,5 +1,5 @@
 # Chronometro
-<img src="https://github.com/dilah/chronometro/blob/master/stopwatch-34108_640.png" width="100">
+<img src="https://github.com/BOTTGH/chronometro/blob/master/stopwatch-34108_640.png" width="100">
 
 The *Chronometro* plugin is a benchmarking plugin for Android Studio. 
 
