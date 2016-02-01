@@ -93,6 +93,10 @@ OBS! If you are using android-data-binding in your project, make sure you have a
 classpath 'com.android.databinding:dataBinder:1.0-rc3'
 ```
 
+
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Chronometro-green.svg?style=true)](https://android-arsenal.com/details/1/3086)
+
+
 License
 ====
     Copyright 2015, TV4 AB.
